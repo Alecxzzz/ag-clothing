@@ -290,6 +290,15 @@ button, input, select, textarea { font: inherit; color: inherit; }
   overflow: hidden;
 }
 .hero__panel svg { width: 58%; height: auto; fill: rgba(20, 18, 16, 0.26); }
+/* Foto real: cubre el panel completo y tapa la silueta de respaldo */
+.hero__foto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 .hero__panel--1 { grid-row: span 2; aspect-ratio: 3 / 4.4; background: linear-gradient(165deg, #f0e5d3, #c7b294); }
 .hero__panel--2 { aspect-ratio: 4 / 3; background: linear-gradient(160deg, #e6dccb, #b9a68b); }
 .hero__panel--3 { aspect-ratio: 4 / 3; background: linear-gradient(160deg, #ded5c6, #a89a86); }

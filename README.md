@@ -185,6 +185,7 @@ Copia de seguridad: `mongodump --db ag_clothing --out respaldo`
 | Usuarios y contraseñas de admin | `server.js` → `ADMINISTRADORES` |
 | Productos de ejemplo | `server.js` → `PRODUCTOS_INICIALES` |
 | WhatsApp, cuentas BAC/LAFISE, moneda, marca | `public/js/comun.js` → `CONFIG` |
+| Fotos del inicio (hero) | `public/img/hero/` → `portada.jpg`, `hombre.jpg`, `accesorios.jpg` |
 | Colores y tipografías | `public/css/estilos.css` → `:root` |
 
 ## Estructura
@@ -204,6 +205,7 @@ ag-clothing/
     ├── checkout.html      # datos + forma de pago + WhatsApp
     ├── admin.html         # productos y pedidos
     ├── css/estilos.css
+    ├── img/hero/          # fotos del inicio (portada, hombre, accesorios)
     └── js/ (api, comun, tienda, cuenta, checkout, admin)
 ```
 

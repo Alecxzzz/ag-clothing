@@ -1,0 +1,6 @@
+# Carpeta para las fotos del inicio (hero).
+# Guarda aquí estos archivos con exactamente estos nombres:
+#   portada.jpg     vertical   mín. 900×1320 px  -> look completo
+#   hombre.jpg      horizontal mín. 800×600 px   -> prenda destacada
+#   accesorios.jpg  horizontal mín. 800×600 px   -> accesorios o detalle
+# También valen .png o .webp: en ese caso cambia la extensión en index.html.
