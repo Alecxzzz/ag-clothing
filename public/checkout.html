@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finalizar compra — A&G CLOTHING</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="marca" href="index.html">
+        <span class="marca__monograma" id="marca-nombre">A&amp;G</span>
+        <span class="marca__texto">Clothing</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegación principal">
+        <ul class="nav__lista">
+          <li><a href="index.html">← Seguir comprando</a></li>
+          <li><a href="cuenta.html">Mi cuenta</a></li>
+        </ul>
+      </nav>
+
+      <div class="acciones">
+        <a class="acciones__cuenta" id="enlace-cuenta" href="cuenta.html">Mi cuenta</a>
+        <span class="btn-carrito">Artículos <span data-contador>0</span></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor pagina">
+    <ol class="pasos">
+      <li>1 · Tu pedido</li>
+      <li class="activo">2 · Datos y forma de pago</li>
+      <li>3 · WhatsApp</li>
+    </ol>
+
+    <div class="pago">
+      <section class="pago__resumen tarjeta" aria-labelledby="titulo-resumen">
+        <h2 class="titulo--pequeno" id="titulo-resumen">Tu pedido</h2>
+        <div class="resumen" id="resumen"></div>
+        <p class="resumen__total">
+          <span>Total</span>
+          <strong id="total">C$ 0.00</strong>
+        </p>
+        <p class="nota" style="margin-top: 1rem; text-align: left;">
+          <a class="enlace-subrayado" href="index.html">Cambiar el pedido</a>
+        </p>
+      </section>
+
+      <section class="tarjeta" aria-labelledby="titulo-datos">
+        <h2 class="titulo--pequeno" id="titulo-datos">Tus datos</h2>
+
+        <form id="form-pedido" novalidate>
+          <div class="campo">
+            <label for="nombre">Nombre completo</label>
+            <input id="nombre" name="nombre" autocomplete="name" placeholder="Ana Gómez Pérez" required>
+          </div>
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+          <div class="campo">
+            <label for="telefono">Número de teléfono</label>
+            <input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="8888 8888" required>
+          </div>
+          <div class="campo">
+            <label for="direccion">Dirección de entrega</label>
+            <textarea id="direccion" name="direccion" rows="3"
+                      placeholder="Departamento, ciudad, barrio, calle, número de casa y punto de referencia" required></textarea>
+          </div>
+
+          <fieldset class="metodos">
+            <legend>¿A qué cuenta quieres pagar?</legend>
+            <div id="opciones-pago"></div>
+          </fieldset>
+
+          <div class="datos-cuenta" id="datos-cuenta"></div>
+
+          <p class="aviso">
+            Al enviar, se abre WhatsApp con tu pedido escrito. Envíaselo al negocio, haz la
+            transferencia y adjunta el comprobante en el mismo chat para que te confirmemos.
+          </p>
+
+          <button class="btn btn--ancho" type="submit" id="btn-enviar">Enviar pedido por WhatsApp</button>
+
+          <p class="error" id="error" hidden></p>
+          <p class="exito" id="exito" hidden>
+            ✔ Pedido guardado. Te estamos llevando a WhatsApp…
+            <a class="enlace-subrayado" id="enlace-manual" href="#" style="margin-left: .4rem;">Abrir el chat</a>
+          </p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__base" style="border: 0">
+        <span>© <span data-anio>2026</span> A&amp;G CLOTHING</span>
+        <a data-whatsapp data-mensaje="Hola A&G CLOTHING, tengo una duda con mi pedido."><span data-whatsapp-visible>+505 5723 3510</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

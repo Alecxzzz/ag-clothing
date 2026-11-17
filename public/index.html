@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A&G CLOTHING â€” Ropa con carÃ¡cter</title>
+  <meta name="description" content="A&G CLOTHING: prendas seleccionadas a mano, cortes limpios y precios claros. Compra en la web y coordina por WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div class="anuncio">
+    <div class="contenedor anuncio__fila">
+      <span>Envíos a todo el país</span>
+      <a data-whatsapp data-mensaje="Hola A&G CLOTHING, quiero información sobre una prenda.">Atención por WhatsApp</a>
+    </div>
+  </div>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <button class="icono-btn menu-btn" type="button" data-menu aria-expanded="false" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+      <a class="marca" href="/">
+        <span class="marca__monograma" id="marca-nombre">A&amp;G</span>
+        <span class="marca__texto">Clothing</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegación principal">
+        <ul class="nav__lista">
+          <li><a href="#catalogo">Colección</a></li>
+          <li><a href="#categorias">Hombre</a></li>
+          <li><a href="admin.html" data-solo-admin hidden>Pedidos</a></li>
+        </ul>
+      </nav>
+
+      <div class="acciones">
+        <a class="acciones__cuenta" id="enlace-cuenta" href="cuenta.html">Iniciar sesión</a>
+        <button class="btn-carrito" type="button" id="abrir-carrito">
+          Carrito <span data-contador>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="contenedor hero__grid">
+        <div>
+          <span class="kicker">Nueva colección</span>
+          <h1 class="hero__titulo">Prendas que hablan de <em>ti</em></h1>
+          <p class="hero__texto">
+            Elegimos cada pieza a mano: cortes limpios, telas que aguantan y precios claros.
+            Arma tu pedido en la web y lo coordinamos contigo por WhatsApp.
+          </p>
+          <div class="hero__botones">
+            <a class="btn" href="#catalogo">Ver colección</a>
+            <a class="btn btn--borde" data-whatsapp data-mensaje="Hola A&G CLOTHING, me gustaría ver más prendas.">Escríbenos</a>
+          </div>
+          <ul class="hero__datos">
+            <li><strong>Envíos</strong><span>A todo el país</span></li>
+            <li><strong>Atención</strong><span>Personalizada</span></li>
+            <li><strong>Cambios</strong><span>Sin complicaciones</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__collage" aria-hidden="true">
+          <div class="hero__panel hero__panel--1">
+            <svg viewBox="0 0 64 64">
+              <path d="M24 6 C24 10 27.5 12 32 12 C36.5 12 40 10 40 6 L45 14 L41 24 L49 58 L15 58 L23 24 L19 14 Z"/>
+            </svg>
+            <span class="hero__sello">Hecho para durar</span>
+          </div>
+          <div class="hero__panel hero__panel--2">
+            <svg viewBox="0 0 64 64">
+              <path d="M22 8 L14 12 L6 20 L12 28 L18 25 L18 56 L46 56 L46 25 L52 28 L58 20 L50 12 L42 8 C40 12.5 36.5 14 32 14 C27.5 14 24 12.5 22 8 Z"/>
+            </svg>
+          </div>
+          <div class="hero__panel hero__panel--3">
+            <svg viewBox="0 0 64 64">
+              <path d="M14 22 L50 22 L46 56 L18 56 Z"/>
+              <path d="M24 22 C24 11 40 11 40 22" fill="none" stroke="rgba(20,18,16,.26)" stroke-width="3"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="categorias" id="categorias" aria-label="Categorías">
+      <div class="contenedor">
+        <div class="categorias__grid">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M24 6 C24 10 27.5 12 32 12 C36.5 12 40 10 40 6 L45 14 L41 24 L49 58 L15 58 L23 24 L19 14 Z"/>
+            </svg>
+            <span class="categoria__meta">Ver prendas</span>
+          </a>
+
+          <a class="categoria" href="#catalogo" data-categoria="Hombre" style="--fondo: linear-gradient(160deg,#cfd6cc,#66756a)">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M22 8 L14 12 L6 20 L12 28 L18 25 L18 56 L46 56 L46 25 L52 28 L58 20 L50 12 L42 8 C40 12.5 36.5 14 32 14 C27.5 14 24 12.5 22 8 Z"/>
+            </svg>
+            <span class="categoria__nombre">Hombre</span>
+            <span class="categoria__meta">Ver prendas</span>
+          </a>
+
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M14 22 L50 22 L46 56 L18 56 Z"/>
+              <path d="M24 22 C24 11 40 11 40 22" fill="none" stroke="rgba(247,242,233,.5)" stroke-width="3"/>
+            </svg>
+            <span class="categoria__meta">Ver piezas</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalogo contenedor" id="catalogo">
+      <div class="catalogo__cabecera">
+        <div>
+          <span class="kicker">Catálogo</span>
+          <h2 class="titulo">Toda la colección</h2>
+        </div>
+        <div class="catalogo__herramientas">
+          <label class="oculto-visual" for="buscar">Buscar prenda</label>
+          <input class="buscador" id="buscar" type="search" placeholder="Buscar prenda…">
+          <div class="filtros" id="filtros"></div>
+        </div>
+      </div>
+
+      <div class="productos" id="productos"></div>
+      <p class="vacio" id="sin-productos" hidden>No encontramos prendas con esa búsqueda.</p>
+    </section>
+
+    <section class="banda">
+      <div class="contenedor banda__contenido">
+        <span class="kicker" style="color: var(--oro)">A&amp;G CLOTHING</span>
+        <h2>Pocas piezas, bien elegidas</h2>
+        <p>
+          Preferimos un catálogo corto y cuidado antes de mil opciones. Si buscas algo que no
+          está en la web, escríbenos y lo conseguimos para ti.
+        </p>
+        <a class="btn btn--claro" data-whatsapp data-mensaje="Hola A&G CLOTHING, busco una prenda en concreto.">Preguntar por una prenda</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__grid">
+        <div class="pie__marca">
+          <span class="marca__monograma">A&amp;G</span>
+          <p>Ropa seleccionada a mano. Compra fácil, atención directa y envíos a todo el país.</p>
+        </div>
+        <div>
+          <h3 class="pie__titulo">Tienda</h3>
+          <ul class="pie__lista">
+            <li><a href="#catalogo">Colección</a></li>
+            <li><a href="#categorias">Categorías</a></li>
+            <li><a href="cuenta.html">Mi cuenta</a></li>
+            <li><a href="politica-envio.html">Envíos a Bluefields</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="pie__titulo">Contacto</h3>
+          <ul class="pie__lista">
+            <li><a data-whatsapp data-mensaje="Hola A&G CLOTHING, necesito ayuda con un pedido."><span data-whatsapp-visible>+505 5723 3510</span></a></li>
+            <li><a href="checkout.html">Finalizar compra</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pie__base">
+        <span>© <span data-anio>2026</span> A&amp;G CLOTHING. Todos los derechos reservados.</span>
+        <span>Hecho en Nicaragua</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="velo" id="velo"></div>
+
+  <aside class="carrito" id="carrito" aria-label="Carrito de compra" aria-hidden="true">
+    <div class="carrito__cabecera">
+      <h2>Tu carrito</h2>
+      <button class="cerrar" type="button" id="cerrar-carrito" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div class="carrito__lista" id="carrito-lista"></div>
+
+    <div class="carrito__pie">
+      <p class="carrito__total"><span>Total</span><strong id="carrito-total">C$ 0.00</strong></p>
+      <a class="btn btn--ancho" href="checkout.html">Finalizar compra</a>
+      <p class="nota">Coordinamos la entrega por WhatsApp.</p>
+    </div>
+  </aside>
+
+  <a class="whatsapp" data-whatsapp data-mensaje="Hola A&G CLOTHING, quiero información." href="#">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 3.5h3l1.5 3.5-2 1.5a11 11 0 0 0 4 4l1.5-2 3.5 1.5v3c0 .9-.7 1.6-1.6 1.5A15 15 0 0 1 5.5 5.1C5.4 4.2 6.1 3.5 7 3.5Z"/>
+    </svg>
+    WhatsApp
+  </a>
+
+  <script src="js/api.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/tienda.js"></script>
+</body>
+</html>
+
+

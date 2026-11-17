@@ -1,0 +1,27 @@
+# See http://help.github.com/ignoring-files for more about how to create a .gitignore file
+
+# Node
+node_modules/
+
+# Logs
+logs
+*.log
+*.log.*
+
+# Runtime stuff
+pids
+*.pid
+*.seeddb
+
+# Directory for Instrumentation
+/.sonarquco
+
+# Environment variables
+.env
+
+# Vercel
+.vercel
+
+# Binarios locales (cloudflared se descarga aparte, 53 MB)
+.DS_Store
+tools/*.exe

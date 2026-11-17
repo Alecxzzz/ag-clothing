@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi cuenta — A&G CLOTHING</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="marca" href="index.html">
+        <span class="marca__monograma" id="marca-nombre">A&amp;G</span>
+        <span class="marca__texto">Clothing</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegación principal">
+        <ul class="nav__lista">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#catalogo">Colección</a></li>
+          <li><a href="checkout.html">Finalizar compra</a></li>
+        </ul>
+      </nav>
+
+      <div class="acciones">
+        <a class="acciones__cuenta" id="enlace-cuenta" href="cuenta.html">Mi cuenta</a>
+        <a class="btn-carrito" href="index.html">Carrito <span data-contador>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor pagina">
+    <div class="pagina__cabecera">
+      <span class="kicker">Tu cuenta</span>
+      <h1 class="titulo">Bienvenido a A&amp;G</h1>
+      <p>Inicia sesión o crea una cuenta para comprar más rápido y guardar tus datos de entrega.</p>
+    </div>
+
+    <div class="cuenta">
+      <div class="pestanas" role="tablist" aria-label="Acceso o registro">
+        <button type="button" id="tab-login" class="activa" role="tab" aria-selected="true">Iniciar sesión</button>
+        <button type="button" id="tab-registro" role="tab" aria-selected="false">Crear cuenta</button>
+      </div>
+
+      <div class="tarjeta">
+        <form id="form-login" novalidate>
+          <div class="campo">
+            <label for="usuario">Usuario o correo</label>
+            <input id="usuario" autocomplete="username" placeholder="Tu usuario o tu correo" required>
+          </div>
+          <div class="campo">
+            <label for="login-clave">Contraseña</label>
+            <input id="login-clave" type="password" autocomplete="current-password" required>
+          </div>
+          <button class="btn btn--ancho" type="submit">Entrar</button>
+          <p class="error" id="error-login" hidden></p>
+        </form>
+
+        <form id="form-registro" hidden novalidate>
+          <div class="campo">
+            <label for="reg-nombre">Nombre completo</label>
+            <input id="reg-nombre" autocomplete="name" placeholder="Ana Gómez" required>
+          </div>
+          <div class="campo">
+            <label for="reg-email">Correo electrónico</label>
+            <input id="reg-email" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+          <div class="campo">
+            <label for="reg-clave">Contraseña (mínimo 6 caracteres)</label>
+            <input id="reg-clave" type="password" autocomplete="new-password" minlength="6" required>
+          </div>
+          <button class="btn btn--ancho" type="submit">Crear mi cuenta</button>
+          <p class="error" id="error-registro" hidden></p>
+        </form>
+
+        <div id="sesion-iniciada" hidden>
+          <p class="texto-gris" id="saludo"></p>
+          <div class="acciones-form">
+            <a class="btn" href="index.html">Seguir comprando</a>
+            <a class="btn btn--borde" href="admin.html" id="enlace-panel" hidden>Panel de administración</a>
+            <button class="btn btn--borde" type="button" id="salir">Cerrar sesión</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__base" style="border: 0">
+        <span>© <span data-anio>2026</span> A&amp;G CLOTHING</span>
+        <a data-whatsapp data-mensaje="Hola A&G CLOTHING, necesito ayuda con mi cuenta.">Escríbenos por WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/cuenta.js"></script>
+</body>
+</html>

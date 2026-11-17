@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel — A&G CLOTHING</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="marca" href="index.html">
+        <span class="marca__monograma" id="marca-nombre">A&amp;G</span>
+        <span class="marca__texto">Clothing</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegación principal">
+        <ul class="nav__lista">
+          <li><a href="index.html">Ver la tienda</a></li>
+          <li><a href="cuenta.html">Mi cuenta</a></li>
+        </ul>
+      </nav>
+
+      <div class="acciones">
+        <a class="acciones__cuenta" id="enlace-cuenta" href="cuenta.html">Mi cuenta</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor admin">
+    <!-- Acceso -->
+    <section id="acceso">
+      <div class="pagina__cabecera">
+        <span class="kicker">Área privada</span>
+        <h1 class="titulo">Panel de administración</h1>
+        <p>Entra con tu cuenta de administrador para gestionar el catálogo y los pedidos.</p>
+      </div>
+
+      <div class="tarjeta cuenta">
+        <form id="form-acceso" novalidate>
+          <div class="campo">
+            <label for="usuario">Usuario</label>
+            <input id="usuario" autocomplete="username" placeholder="admin" required>
+          </div>
+          <div class="campo">
+            <label for="clave">Contraseña</label>
+            <input id="clave" type="password" autocomplete="current-password" required>
+          </div>
+          <button class="btn btn--ancho" type="submit">Entrar</button>
+          <p class="error" id="error-acceso" hidden></p>
+          <p class="nota" style="margin-top: 1rem;">
+            ¿Eres cliente? <a class="enlace-subrayado" href="cuenta.html">Entra por aquí</a>
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Panel -->
+    <section id="panel" hidden>
+      <div class="admin__cabecera">
+        <div>
+          <span class="kicker">A&amp;G CLOTHING</span>
+          <h1 class="titulo--pequeno">Panel de control</h1>
+        </div>
+        <span class="admin__usuario" id="usuario-actual"></span>
+        <button class="btn btn--borde btn--mini" type="button" id="salir">Cerrar sesión</button>
+      </div>
+
+      <div class="pestanas pestanas--admin" role="tablist" aria-label="Secciones del panel">
+        <button type="button" id="tab-productos" class="activa" role="tab" aria-selected="true">Productos</button>
+        <button type="button" id="tab-pedidos" role="tab" aria-selected="false">Pedidos</button>
+      </div>
+
+      <!-- Productos -->
+      <div id="vista-productos">
+        <div class="panel__cabecera">
+          <p class="texto-gris"><span id="num-productos">0</span> productos en la tienda</p>
+          <div class="panel__acciones">
+            <button class="btn btn--mini" type="button" id="nuevo">+ Nuevo producto</button>
+          </div>
+        </div>
+
+        <form class="tarjeta" id="form-producto" hidden>
+          <h2 class="titulo--pequeno" id="titulo-form">Nuevo producto</h2>
+          <input type="hidden" id="prod-id">
+
+          <div class="form-grid">
+            <div class="campo campo--ancho">
+              <label for="prod-nombre">Nombre *</label>
+              <input id="prod-nombre" required>
+            </div>
+            <div class="campo">
+              <label for="prod-categoria">Categoría *</label>
+              <input id="prod-categoria" placeholder="Hombre" required>
+            </div>
+            <div class="campo">
+              <label for="prod-precio">Precio (C$) *</label>
+              <input id="prod-precio" type="number" min="0" step="0.01" required>
+            </div>
+            <div class="campo">
+              <label for="prod-antes">Precio anterior</label>
+              <input id="prod-antes" type="number" min="0" step="0.01">
+            </div>
+            <div class="campo">
+              <label for="prod-tallas">Tallas (separadas por coma)</label>
+              <input id="prod-tallas" placeholder="S, M, L, XL">
+            </div>
+            <div class="campo">
+              <label for="prod-badge">Etiqueta</label>
+              <input id="prod-badge" placeholder="Nuevo, Oferta…">
+            </div>
+            <div class="campo">
+              <label for="prod-imagen">Foto (enlace o subida)</label>
+              <input id="prod-imagen" placeholder="https://… o img/productos/nombre.jpg">
+            </div>
+            <div class="campo">
+              <label for="prod-imagen-archivo">O sube una foto: toma desde cámara o elige de la galería</label>
+              <input id="prod-imagen-archivo" type="file" accept="image/*" capture>
+              <div id="prod-imagen-preview" class="preview" hidden></div>
+            </div>
+            <div class="campo campo--ancho">
+              <label for="prod-descripcion">Descripción corta</label>
+              <input id="prod-descripcion">
+            </div>
+            <label class="check"><input type="checkbox" id="prod-disponible" checked> Disponible</label>
+          </div>
+
+          <div class="acciones-form">
+            <button class="btn btn--mini" type="submit">Guardar producto</button>
+            <button class="btn btn--borde btn--mini" type="button" id="cancelar">Cancelar</button>
+          </div>
+        </form>
+
+        <div class="lista-admin" id="lista-productos"></div>
+      </div>
+
+      <!-- Pedidos -->
+      <div id="vista-pedidos" hidden>
+        <div class="panel__cabecera">
+          <p class="texto-gris"><span id="num-pedidos">0</span> pedidos recibidos</p>
+          <div class="panel__acciones">
+            <button class="btn btn--borde btn--mini" type="button" id="recargar-pedidos">Actualizar</button>
+          </div>
+        </div>
+
+        <div class="lista-admin" id="lista-pedidos"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__base" style="border: 0">
+        <span>© <span data-anio>2026</span> A&amp;G CLOTHING · Panel interno</span>
+        <a href="index.html">Volver a la tienda</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
+
